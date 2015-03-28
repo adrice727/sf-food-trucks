@@ -24,12 +24,6 @@ $(function(){
     initializeMap();
   }
 
-  var currentLocationMarker = new google.maps.Marker({
-    position: mapOptions.center,
-    map: map,
-    title: 'My Location'
-  });
-
   function initializeMap(){
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
     currentLocationMarker = new google.maps.Marker({
@@ -38,9 +32,42 @@ $(function(){
       title: 'My Location'
     });
     currentLocationMarker.setMap(map);
+    addTruckMarkersToMap();
   }
 
+  var truckMarkers = [];
+  var truckImage = 'img/food-truck.png';
+
+  var foodTruckService = new FoodTruckService();
+  foodTruckService.initialize().then(function(){
+    var trucks = foodTruckService.allTrucks();
+    _.each(trucks, function(truck){
+      createTruckMarker(truck.objectid, truck.applicant, truck.location);
+    })
+  })
+
+  function createTruckMarker(id, name, location){
+    if ( !!location ) {
+      var markerLatLng = new google.maps.LatLng(location.latitude, location.longitude);
+      var marker = new google.maps.Marker({
+        position: markerLatLng,
+        map: map,
+        title: name,
+        icon: truckImage
+      });
+      truckMarkers.push(marker);
+    }
+  }
+
+  function addTruckMarkersToMap(){
+    _.each(truckMarkers, function(marker){
+      marker.setMap(map);
+    })
+  }
 });
+
+
+
 
       
 
