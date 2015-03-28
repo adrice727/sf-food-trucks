@@ -1,11 +1,22 @@
 body {
   margin: 0;
   font-family: 'Architects Daughter', cursive;
+  color: #24353C
 }
 h2, h3 {
-  
   text-align: center;
   margin: 10px 0;
+  color: #24353C
+}
+
+.title-bar {
+  background: #24353C;
+  color: #FFFFFF;
+}
+
+.title-bar h1 {
+  margin: 0;
+  padding: 5px 0 5px 10px;
 }
 
 .container {
@@ -17,12 +28,37 @@ h2, h3 {
 
 .truck-info {
   width: 30%;
-  height: 600px;
-  padding: 20px;
+  height: 565px;
+  padding: 50px 15px;
 }
 
-.truck-name {
-  font-size: 24px;
+.truck-info div {
+  font-size: 20px;
+}
+
+.truck-info .truck-name {
+  font-size: 34px;
+}
+
+
+.truck-items ul {
+  margin-top: 5px;
+  list-style-type: none;
+}
+
+.truck-items li {
+  position: relative;
+}
+
+.truck-items li:before {
+  content: '';
+  position: absolute;
+  background: url(../img/utensils.png);
+  background-size: contain;
+  top: 3px;
+  left: -25px;
+  height: 20px;
+  width: 20px;
 }
 
 .no-truck-selected {
@@ -49,8 +85,8 @@ h2, h3 {
 }
 
 .map-container {
-  position: absolute;
-  right: 10px;
-  height: 600px;
+  position: relative;
+  padding-right: 10px;
+  height: 565px;
   width: 70%;
 }

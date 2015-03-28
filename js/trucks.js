@@ -31,6 +31,7 @@ var FoodTruckService = (function(){
     $('.truck-details').children('span').each(function(){
       $(this).html('');
     })
+    $('.truck-items ul').empty();
   }
 
   service.prototype.displayTruckInfo = function(id) {
@@ -39,7 +40,12 @@ var FoodTruckService = (function(){
     $('.no-truck-selected').addClass('hidden');
     $('.truck-name').text(truckInfo.applicant);
     $('.truck-address span').text(truckInfo.address);
-    $('.truck-items span').text(truckInfo.FoodItems);
+    var items = truckInfo.fooditems.split(':');
+    $('.truck-cuisine span').text(items[0]);
+    _.each(items.slice(1), function(item) {
+      var listItem = '<li>' + item + '</li>';
+      $('.truck-items ul').append(listItem);
+    })
     $('.truck-details').removeClass('hidden');
   }
 
