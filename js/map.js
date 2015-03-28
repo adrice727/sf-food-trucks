@@ -1,25 +1,46 @@
 $(function(){
 
-
+  var map, currentLocationMarker = {};
+  
+  // Define map options
   var mapOptions = {
     minZoom:12,
-    zoom: 13,
-    maxZoom: 16,
+    zoom: 15,
+    maxZoom: 18,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     mapTypeControl: false
   };
 
+  // Get current location or default to Market/Embarcadero
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function (position) {
-    curLat = position.coords.latitude;
-    curLong = position.coords.longitude;
-    mapOptions.center = new google.maps.LatLng(curLat, curLong);
+      curLat = position.coords.latitude;
+      curLong = position.coords.longitude;
+      mapOptions.center = new google.maps.LatLng(curLat, curLong);
+      initializeMap();
     });
   } else {
     mapOptions.center = new google.maps.LatLng(37.79496, -122.394358);
+    initializeMap();
   }
 
-})
+  var currentLocationMarker = new google.maps.Marker({
+    position: mapOptions.center,
+    map: map,
+    title: 'My Location'
+  });
+
+  function initializeMap(){
+    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    currentLocationMarker = new google.maps.Marker({
+      position: mapOptions.center,
+      map: map,
+      title: 'My Location'
+    });
+    currentLocationMarker.setMap(map);
+  }
+
+});
 
       
 
@@ -90,4 +111,4 @@ $(function(){
       //   searchBox.setBounds(bounds);
       // });
 
-      google.maps.event.addDomListener(window, 'load', initialize);
+      // google.maps.event.addDomListener(window, 'load', initialize);
