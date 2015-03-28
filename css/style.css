@@ -1,13 +1,56 @@
-
-h1 {
+body {
+  margin: 0;
   font-family: 'Architects Daughter', cursive;
+}
+h2, h3 {
+  
   text-align: center;
   margin: 10px 0;
+}
+
+.container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.truck-info {
+  width: 30%;
+  height: 600px;
+  padding: 20px;
+}
+
+.truck-name {
+  font-size: 24px;
+}
+
+.no-truck-selected {
+  position: relative;
+  top: 35%;
+}
+
+.no-truck-selected:after {
+  content: '';
+  background: url(../img/food-truck-large.png);
+  position: absolute;
+  height: 125px;
+  width: 125px;
+  text-align: center;
+  background-size: contain;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 .map-container {
   position: absolute;
   right: 10px;
   height: 600px;
-  width: 800px;
+  width: 70%;
 }

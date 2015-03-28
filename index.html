@@ -11,18 +11,33 @@
 
 </head>
   <body>
-    
-    <h1>sf food trucks</h1>
-    <div class="map-container">
-        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-        <div id="map-canvas" style="width: 100%; height: 100%"></div>
-    </div>
 
-    <div class="truck-details"></div>
+    <div class="container">
+        
+        <div class="truck-info">
+            <div class="no-truck-selected">
+                <h3>Click a truck to get more info</h3>
+            </div>
+            <div class="truck-details hidden">
+                <div class="truck-name"></div>
+                <div class="truck-address">Address: <span></span></div>
+                <div class="truck-items">Items Served: <span></span></div>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <h2></h2>
+            <div id="map-canvas" style="width: 100%; height: 100%"></div>
+        </div>
+
+    </div>
 
     <!-- Bower Components -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="bower_components/spin-js/spin.js"></script>
+    <script src="bower_components/spin-js/jquery.spin.js"></script>
+
 
     <!-- Scripts -->
     <script src="js/trucks.js"></script>

@@ -27,9 +27,30 @@ var FoodTruckService = (function(){
     return foodTrucks;
   }
 
+  function clearPreviousInfo(){
+    $('.truck-details').children('span').each(function(){
+      $(this).html('');
+    })
+  }
+
+  service.prototype.displayTruckInfo = function(id) {
+    var truckInfo = foodTrucks[id];
+    clearPreviousInfo();
+    $('.no-truck-selected').addClass('hidden');
+    $('.truck-name').text(truckInfo.applicant);
+    $('.truck-address span').text(truckInfo.address);
+    $('.truck-items span').text(truckInfo.FoodItems);
+    $('.truck-details').removeClass('hidden');
+  }
+
   service.prototype.getTruckInfo = function(id) {
     return foodTrucks[id];
   }
+
+  // name -> applicant
+  // address -> address
+  // FoodItems -> FoodItems
+
 
   return service;
 
