@@ -1,8 +1,13 @@
 
+h1 {
+  font-family: 'Architects Daughter', cursive;
+  text-align: center;
+  margin: 10px 0;
+}
 
 .map-container {
   position: absolute;
   right: 10px;
-  height: 400px;
-  width: 600px;
+  height: 600px;
+  width: 800px;
 }

@@ -4,8 +4,8 @@ $(function(){
   
   // Define map options
   var mapOptions = {
-    minZoom:12,
-    zoom: 15,
+    minZoom:16,
+    zoom: 16,
     maxZoom: 18,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     mapTypeControl: false
