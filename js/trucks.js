@@ -34,13 +34,11 @@ var FoodTruckService = (function(){
     $('.truck-items ul').empty();
   }
 
-  service.prototype.displayTruckInfo = function(id) {
-    var truckInfo = foodTrucks[id];
-    clearPreviousInfo();
+  function populateWithNewInfo(truck) {
     $('.no-truck-selected').addClass('hidden');
-    $('.truck-name').text(truckInfo.applicant);
-    $('.truck-address span').text(truckInfo.address);
-    var items = truckInfo.fooditems.split(':');
+    $('.truck-name').text(truck.applicant);
+    $('.truck-address span').text(truck.address);
+    var items = truck.fooditems.split(':');
     $('.truck-cuisine span').text(items[0]);
     _.each(items.slice(1), function(item) {
       var listItem = '<li>' + item + '</li>';
@@ -49,15 +47,16 @@ var FoodTruckService = (function(){
     $('.truck-details').removeClass('hidden');
   }
 
+  service.prototype.displayTruckInfo = function(id) {
+    var truckInfo = foodTrucks[id];
+    clearPreviousInfo();
+    populateWithNewInfo(truckInfo);
+  }
+
   service.prototype.getTruckInfo = function(id) {
     return foodTrucks[id];
   }
-
-  // name -> applicant
-  // address -> address
-  // FoodItems -> FoodItems
-
-
+  
   return service;
 
 })();

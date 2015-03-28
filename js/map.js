@@ -1,5 +1,7 @@
 $(function(){
 
+  /*** Map Setup and Initialization ***/
+
   $('.map-container').spin('large');
 
   var map, currentLocationMarker = {};
@@ -38,13 +40,14 @@ $(function(){
     addTruckMarkersToMap();
   }
 
+  /*** Add truck markers and set event listeners ***/
+
   var truckMarkers = [];
   /*
    Workaround for having to use google maps info windows to display data
    * is to map each marker to it's corresponding truck id by using each
    * location as a unique key.
    */
-    
   var truckMarkerDataMap = {};
   var truckImage = 'img/food-truck-icon.png';
 
