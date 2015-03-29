@@ -38,6 +38,7 @@ h2, h3 {
 
 .truck-info .truck-name {
   font-size: 34px;
+  color: #F03D70
 }
 
 
@@ -89,4 +90,13 @@ h2, h3 {
   padding-right: 10px;
   height: 565px;
   width: 70%;
+}
+
+.controls {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 18px;
+  height: 30px;
+  width: 350px;
+  padding-left: 10px;
+  margin-top: 25px;
 }

@@ -43,8 +43,35 @@ $(function(){
       title: 'My Location'
     });
     $('.map-container').spin(false);
+    addSearchBox();
     currentLocationMarker.setMap(map);
     addTruckMarkersToMap();
+  }
+
+  function addSearchBox(){
+    var input = /** @type {HTMLInputElement} */(
+        document.getElementById('pac-input'));
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+    var searchBox = new google.maps.places.SearchBox((input));
+
+    // Listen for the event fired when the user selects an item from the
+    // pick list. Retrieve the matching places for that item.
+    google.maps.event.addListener(searchBox, 'places_changed', function() {
+      var places = searchBox.getPlaces();
+
+      if (places.length == 0) {
+        return;
+      } else {
+        var location = places[0].geometry.location;
+        var center = new google.maps.LatLng(location.k, location.D);
+        currentLocationMarker.setPosition(center)
+        map.panTo(center);
+      }
+
+    });
+
+    $('#pac-input').removeClass('hidden');
   }
 
   /*** Add truck markers and set event listeners ***/
