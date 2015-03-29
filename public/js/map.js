@@ -22,8 +22,15 @@ $(function(){
       curLong = position.coords.longitude;
       mapOptions.center = new google.maps.LatLng(curLat, curLong);
       initializeMap();
+    },
+    function(){
+      setDefaultLocation();
     });
   } else {
+    setDefaultLocation();
+  }
+
+  function setDefaultLocation(){
     mapOptions.center = new google.maps.LatLng(37.79496, -122.394358);
     initializeMap();
   }

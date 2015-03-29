@@ -9,6 +9,7 @@ requires a single api call to obtain.
 
 * jQuery
 * underscore.js
+* Bower
 * Node.js/Express
 * Google Maps JavaScript API 
 
