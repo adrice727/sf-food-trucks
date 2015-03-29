@@ -1,6 +1,6 @@
 #sf food trucks
 
-This is a single-page application centered around an interactive map of San Francsico that displays the locations of food trucks around the city.  You can view a live version [here](www.google.com).
+This is a single-page application centered around an interactive map of San Francsico that displays the locations of food trucks around the city.  You can view a live version at [http://sf-trucks.herokuapp.com/](http://sf-trucks.herokuapp.com/).
 
 I opted for a purely front-end solution as the entire [dataset](https://data.sfgov.org/Economy-and-Community/Mobile-Food-Facility-Permit/rqzj-sfat?) is relatively small, simple, and only
 requires a single api call to obtain.
