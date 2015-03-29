@@ -49,7 +49,7 @@ $(function(){
   }
 
   function addSearchBox(){
-    var input = document.getElementById('pac-input'));
+    var input = document.getElementById('pac-input');
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
     var searchBox = new google.maps.places.SearchBox((input));
