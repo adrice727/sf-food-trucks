@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+    <title>sf food trucks</title>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB-q8g0jpS1Hg5SRAPZ2hx9zusghBM63Dc&sensor=false&libraries=places"></script>
+
+</head>
+  <body>
+    <div class="title-bar">
+        <h1>sf food trucks</h1>
+    </div>
+    <div class="container">
+        
+        <div class="truck-info">
+            <div class="no-truck-selected"></div>
+            <div class="truck-details hidden">
+                <div class="truck-name"></div>
+                <div class="truck-address">Address: <span></span></div>
+                <div class="truck-cuisine">Cuisine: <span></span></div>
+                <div class="truck-items">Specialties: <ul></ul></div>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <h2>Click on a truck to get more info</h2>
+            <div id="map-canvas" style="width: 100%; height: 100%"></div>
+        </div>
+
+    </div>
+
+    <!-- Bower Components -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="bower_components/spin-js/spin.js"></script>
+    <script src="bower_components/spin-js/jquery.spin.js"></script>
+
+
+    <!-- Scripts -->
+    <script src="js/trucks.js"></script>
+    <script src="js/map.js"></script>
+
+
+  </body>
+</html>
