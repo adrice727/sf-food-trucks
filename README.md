@@ -19,6 +19,6 @@ the application files.
 
 I opted to use Jasmine for a testing framework since there is an add-on library (Jasmine-jQuery) that makes it easy to test DOM events.  However, I've been short on time and haven't actually written any tests.
 
-The code for this and some of my other projects can be found on [github](https://github.com/adrice727) and my resume can be seen [here](http://goo.gl/0tClVH).
+The code for this and some of my other projects can be found on [github](https://github.com/adrice727) and my resume can be found [here](http://goo.gl/0tClVH).
 
 ~~ Aaron Rice ~~
