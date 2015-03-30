@@ -3,9 +3,9 @@
  */
 var Map = (function(){
 
-  var module = function(){};
+  var gMap = function(){};
 
-  module.prototype.initialize = function(){
+  gMap.prototype.initialize = function(){
       // Get current location or default to Market/Embarcadero
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function (position) {
@@ -21,6 +21,7 @@ var Map = (function(){
       setDefaultLocation();
     }
   }
+
   var map, currentLocationMarker = {};
   
   // Define map options
@@ -117,5 +118,5 @@ var Map = (function(){
     })
   }
 
-  return module;
+  return gMap;
 })();
