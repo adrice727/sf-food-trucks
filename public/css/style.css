@@ -3,6 +3,7 @@ body {
   font-family: 'Architects Daughter', cursive;
   color: #24353C
 }
+
 h2, h3 {
   text-align: center;
   margin: 10px 0;
@@ -40,7 +41,6 @@ h2, h3 {
   font-size: 34px;
   color: #F03D70
 }
-
 
 .truck-items ul {
   margin-top: 5px;

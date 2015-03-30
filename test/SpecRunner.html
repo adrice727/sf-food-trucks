@@ -4,19 +4,29 @@
   <meta charset="utf-8">
   <title>Jasmine Spec Runner v2.2.0</title>
 
+
+  <!-- Jasmine Core -->
   <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.2.0/jasmine_favicon.png">
   <link rel="stylesheet" href="lib/jasmine-2.2.0/jasmine.css">
-
-  <script src="../bower_components/jasmine-jquery/lib/jasmine-jquery.js"></script>
   <script src="lib/jasmine-2.2.0/jasmine.js"></script>
   <script src="lib/jasmine-2.2.0/jasmine-html.js"></script>
   <script src="lib/jasmine-2.2.0/boot.js"></script>
 
-  <!-- include source files here... -->
-  <!-- <script src="../public/js/modules/trucks.js"></script>
-  <script src="../public/js/modules/map.js"></script>
-  -->
+  <!-- Jasmine jQuery -->
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../bower_components/jasmine-jquery/lib/jasmine-jquery.js"></script>
 
+  <script src="../bower_components/underscore/underscore-min.js"></script>
+  <script src="../bower_components/spin-js/spin.js"></script>
+  <script src="../bower_components/spin-js/jquery.spin.js"></script>
+  <script src="../bower_components/jasmine-jquery/lib/jasmine-jquery.js"></script>
+
+  <!-- Source Files -->
+  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB-q8g0jpS1Hg5SRAPZ2hx9zusghBM63Dc&sensor=false&libraries=places"></script>
+  <script src="../public/js/modules/trucks.js"></script>
+  <script src="../public/js/modules/map.js"></script>
+  <script src="../public/js/app.js"></script>
+  
   <!-- include spec files here... -->
   <script src="spec/MainSpec.js"></script>
 

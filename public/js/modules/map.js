@@ -79,9 +79,10 @@ var Map = (function(){
 
   var truckMarkers = [];
   /*
-   * Workaround for not having to use google maps info windows to display data
+   * Google Maps API doesn't allow you to add custom properties to markers.
+   * A workaround for not having to use google maps info windows to display data
    * is to map each marker to it's corresponding truck id by using each
-   * location (lat/lang) as a unique key.
+   * individual location (lat/lang) as a unique key.
    */
   var truckMarkerDataMap = {};
   var truckImage = 'img/food-truck-icon.png';
