@@ -1,15 +1,14 @@
+/*
+ * Map Setup and Initialization
+ */
 $(function(){
-
-  /*** Map Setup and Initialization ***/
-
-  $('.map-container').spin('large');
 
   var map, currentLocationMarker = {};
   
   // Define map options
   var mapOptions = {
     minZoom:16,
-    zoom: 17,
+    zoom: 18,
     maxZoom: 19,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     mapTypeControl: false
@@ -64,6 +63,7 @@ $(function(){
         var center = new google.maps.LatLng(location.k, location.D);
         currentLocationMarker.setPosition(center)
         map.panTo(center);
+        map.setZoom(mapOptions.zoom);
       }
 
     });
@@ -75,9 +75,9 @@ $(function(){
 
   var truckMarkers = [];
   /*
-   Workaround for having to use google maps info windows to display data
+   * Workaround for not having to use google maps info windows to display data
    * is to map each marker to it's corresponding truck id by using each
-   * location as a unique key.
+   * location (lat/lang) as a unique key.
    */
   var truckMarkerDataMap = {};
   var truckImage = 'img/food-truck-icon.png';
