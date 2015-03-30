@@ -1,8 +1,26 @@
 /*
  * Map Setup and Initialization
  */
-$(function(){
+var Map = (function(){
 
+  var module = function(){};
+
+  module.prototype.initialize = function(){
+      // Get current location or default to Market/Embarcadero
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        curLat = position.coords.latitude;
+        curLong = position.coords.longitude;
+        mapOptions.center = new google.maps.LatLng(curLat, curLong);
+        buildMap();
+      },
+      function(){
+        setDefaultLocation();
+      });
+    } else {
+      setDefaultLocation();
+    }
+  }
   var map, currentLocationMarker = {};
   
   // Define map options
@@ -14,27 +32,12 @@ $(function(){
     mapTypeControl: false
   };
 
-  // Get current location or default to Market/Embarcadero
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      curLat = position.coords.latitude;
-      curLong = position.coords.longitude;
-      mapOptions.center = new google.maps.LatLng(curLat, curLong);
-      initializeMap();
-    },
-    function(){
-      setDefaultLocation();
-    });
-  } else {
-    setDefaultLocation();
-  }
-
   function setDefaultLocation(){
     mapOptions.center = new google.maps.LatLng(37.79496, -122.394358);
-    initializeMap();
+    buildMap();
   }
 
-  function initializeMap(){
+  function buildMap(){
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
     currentLocationMarker = new google.maps.Marker({
       position: mapOptions.center,
@@ -113,4 +116,6 @@ $(function(){
       marker.setMap(map);
     })
   }
-});
+
+  return module;
+})();

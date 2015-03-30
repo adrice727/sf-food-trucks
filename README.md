@@ -16,5 +16,5 @@ the static content.
 * Jasmine/Jasmine-jQuery
 * Google Maps JavaScript API 
 
-I initially started building the application with Backbone, but eventually decided that using a framework for something so simple would be overkill. A single file is used to initialize the map and handle click events, and another to manage the data related to the food trucks.
+I initially started building the application with Backbone, but eventually decided that using a framework for something so simple would be overkill. A single module is used to initialize the map and handle click events, and another to manage the data related to the food trucks.
 
